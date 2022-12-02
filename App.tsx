@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { MapComponent } from './src/components/Map/MapComponent';
 import { AuthScreen } from './src/screen/AuthScreen';
 
 export default function App() {
   return (
-    <AuthScreen/>
+    // <AuthScreen/>
+    <MapComponent/>
   );
 }
 
@@ -16,3 +18,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
+
