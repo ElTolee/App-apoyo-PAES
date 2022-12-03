@@ -7,6 +7,7 @@ import { SignInScreen } from './src/screen/SignInScreen';
 import { HomeComponent } from './src/components/homeComponent/HomeComponent';
 import { HomeScreen } from './src/screen/HomeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MathScreen } from './src/screen/MathScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,8 @@ export default function App() {
         <Stack.Screen name="Auth" component={AuthScreen} />
         <Stack.Screen name="SignInScreen" component={SignInScreen} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="MathScreen" component={MathScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
