@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, TextInput, View, StyleSheet } from 'react-native'
 import { logIn } from '../../firebase/auth';
 
-export const LoginComponent = () => {
+export const LoginComponent = ({nav}:any) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -14,8 +14,11 @@ export const LoginComponent = () => {
         const successRegister = await logIn(email, password);
         if (successRegister) {
             setLoading(false);
+            //Poner aqui la navegacion
+            nav.push('HomeScreen');
         } else {
             setLoading(false);
+            Text = "Error al iniciar sesion";
         }
     }
 
@@ -31,6 +34,7 @@ export const LoginComponent = () => {
 
 
   return (
+    <>
     <View style={styles.container}>
     <TextInput
         placeholder="Ingrese Email"
@@ -54,7 +58,15 @@ export const LoginComponent = () => {
             disabled={loading || correctData}
         />
     </View>
+    <View style={{ marginTop: 50, width: '50%' }}>
+        <Button
+            onPress={() => nav.push('SignInScreen')}
+            title={loading ? 'Loading...' : 'Registrarse'}
+            color="#29526D"
+        />
+    </View>
 </View>
+</>
   )
 }
 
