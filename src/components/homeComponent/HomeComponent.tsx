@@ -1,7 +1,7 @@
 import React from 'react'
 import { TextInput, StyleSheet, View, Button, Text } from 'react-native';
 
-export const HomeComponent = () => {
+export const HomeComponent = ({nav}:any) => {
     function handlePress() {
         console.log("Text button pressed");
     }
@@ -23,7 +23,7 @@ export const HomeComponent = () => {
         
         <View style={{ marginTop: 50, width: '90%' }}>
             <Button 
-                onPress={handlePress}
+                onPress={() => nav.push('MathScreen')}
                 title="Matematicas"
                 color="#0000C1"
             />
