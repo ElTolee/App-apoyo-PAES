@@ -18,8 +18,8 @@ import {
   const logIn = async (email: string, password: string) => {
     return signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log("=========");
-        console.log(userCredential.user);
+        console.log("Inicio de sesión exitoso");
+        
         return true;
       })
       .catch((error) => {
