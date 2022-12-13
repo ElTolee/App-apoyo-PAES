@@ -2,10 +2,11 @@ import React from 'react'
 import { TextInput, StyleSheet, View, Button, Text   } from 'react-native';
 
 
-const MathComponent = () => {
+const CienceComponent = () => {
   return (
-    <Text>MathScreen</Text>
+    <Text>CienceScreen</Text>
   )
 }
 
-export default MathComponent
+export default CienceComponent
+

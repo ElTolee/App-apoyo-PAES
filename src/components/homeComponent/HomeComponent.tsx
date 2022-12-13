@@ -1,10 +1,14 @@
 import React from 'react'
 import { TextInput, StyleSheet, View, Button, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export const HomeComponent = ({nav}:any) => {
+export const HomeComponent = ({navigation}:any) => {
     function handlePress() {
         console.log("Text button pressed");
+    
     }
+  
   return (
     <View style={styles.container}>
         
@@ -14,7 +18,7 @@ export const HomeComponent = ({nav}:any) => {
 
         <View style={{ marginTop: 50, width: '90%' }}>
             <Button 
-                onPress={handlePress}
+                onPress={() => navigation.push('LenguajeScreen')}
                 title="Lenguaje"
                 color="#C12300"
 
@@ -23,14 +27,14 @@ export const HomeComponent = ({nav}:any) => {
         
         <View style={{ marginTop: 50, width: '90%' }}>
             <Button 
-                onPress={() => nav.push('MathScreen')}
+                onPress={() => navigation.push('MathScreen')}
                 title="Matematicas"
                 color="#0000C1"
             />
         </View>
         <View style={{ marginTop: 50, width: '90%' }}>
             <Button
-                onPress={handlePress}
+                onPress={() => navigation.push("CienceScreen")}
                 title="Ciencias"
                 color="#009900"
                 
@@ -38,7 +42,7 @@ export const HomeComponent = ({nav}:any) => {
         </View>
         <View style={{ marginTop: 50, width: '90%', }}>
             <Button 
-                onPress={handlePress}
+                onPress={() => navigation.push("HistoryScreen")}
                 title="Historia"
                 color="#BEBE09"
             />

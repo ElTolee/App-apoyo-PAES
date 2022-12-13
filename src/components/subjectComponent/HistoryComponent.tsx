@@ -2,10 +2,10 @@ import React from 'react'
 import { TextInput, StyleSheet, View, Button, Text   } from 'react-native';
 
 
-const MathComponent = () => {
+const HistoryComponent = () => {
   return (
-    <Text>MathScreen</Text>
+    <Text>HistoryScreen</Text>
   )
 }
 
-export default MathComponent
+export default HistoryComponent

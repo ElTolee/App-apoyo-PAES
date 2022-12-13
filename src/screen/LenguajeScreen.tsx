@@ -1,14 +1,14 @@
 import React from 'react'
 import { Button, TextInput, View,Text, StyleSheet } from 'react-native'
-import MathComponent from '../components/subjectComponent/MathComponent';
+import LenguajeComponent from '../components/subjectComponent/LenguajeComponent';
 
 
 
-export const MathScreen = () => {
+export const LenguajeScreen = () => {
   return (
     <>
         <View style={styles.container}>
-           <MathComponent/>
+           <LenguajeComponent/>
         </View>
     </>
   )

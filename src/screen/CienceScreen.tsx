@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Button, TextInput, View,Text, StyleSheet } from 'react-native'
-import { HomeComponent } from '../components/homeComponent/HomeComponent'
-import { NavigationContainer, useNavigationContainerRef } from '@react-navigation/native';
+import CienceComponent from '../components/subjectComponent/CienceComponent';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export const HomeScreen = ( {navigation}:any)  => {
-  const nav= navigation;
 
+export const CienceScreen = () => {
   return (
-
     <>
         <View style={styles.container}>
-            <HomeComponent navigation={nav}/>
+            <CienceComponent/>
         </View>
     </>
   )

@@ -1,16 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Button, TextInput, View,Text, StyleSheet } from 'react-native'
-import { HomeComponent } from '../components/homeComponent/HomeComponent'
-import { NavigationContainer, useNavigationContainerRef } from '@react-navigation/native';
+import HistoryComponent from '../components/subjectComponent/HistoryComponent';
 
-export const HomeScreen = ( {navigation}:any)  => {
-  const nav= navigation;
-
+export const HistoryScreen = () => {
   return (
-
     <>
         <View style={styles.container}>
-            <HomeComponent navigation={nav}/>
+            <HistoryComponent/>
         </View>
     </>
   )
