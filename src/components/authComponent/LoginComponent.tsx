@@ -18,7 +18,7 @@ export const LoginComponent = ({nav}:any) => {
             nav.push('HomeScreen');
         } else {
             setLoading(false);
-            Text = "Error al iniciar sesion";
+            console.error('Contraseña o Usuario incorrecto');
         }
     }
 
