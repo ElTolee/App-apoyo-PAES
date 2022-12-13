@@ -7,6 +7,7 @@ import { SignInScreen } from './src/screen/SignInScreen';
 import { HomeComponent } from './src/components/homeComponent/HomeComponent';
 import { HomeScreen } from './src/screen/HomeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import {CienceScreen} from './src/screen/CienceScreen';
 import {HistoryScreen} from './src/screen/HistoryScreen';
 import { LenguajeScreen } from './src/screen/LenguajeScreen';
@@ -26,6 +27,7 @@ export default function App() {
         <Stack.Screen name="CienceScreen" component={CienceScreen} />
         <Stack.Screen name="LenguajeScreen" component={LenguajeScreen} />
         <Stack.Screen name="HistoryScreen" component={HistoryScreen} />
+
         <Stack.Screen name="MathScreen" component={MathScreen} />
 
       </Stack.Navigator>

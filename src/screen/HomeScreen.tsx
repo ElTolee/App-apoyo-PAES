@@ -5,7 +5,7 @@ import { NavigationContainer, useNavigationContainerRef } from '@react-navigatio
 
 export const HomeScreen = ( {navigation}:any)  => {
   const nav= navigation;
-  
+
   return (
 
     <>
