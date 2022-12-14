@@ -4,11 +4,12 @@ import LenguajeComponent from '../components/subjectComponent/LenguajeComponent'
 
 
 
-export const LenguajeScreen = () => {
+export const LenguajeScreen = ({navigation}:any) => {
+  const nav= navigation;
   return (
     <>
         <View style={styles.container}>
-           <LenguajeComponent/>
+           <LenguajeComponent navigation={nav}/>
         </View>
     </>
   )
