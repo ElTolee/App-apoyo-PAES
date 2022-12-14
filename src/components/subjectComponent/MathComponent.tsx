@@ -2,26 +2,27 @@ import React from 'react'
 import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function MathComponent({navigation}:any) {
+   
   return (
     <>
       
       <View style={styles.container}>
           <Text style={styles.Textx}>Unidades</Text>
           
-              <TouchableOpacity style={[styles.buttons,styles.blue]} onPress={() => navigation.navigate('LenguajeScreen')}>
+              <TouchableOpacity style={[styles.buttons,styles.blue]} onPress={() => navigation.navigate('Cap1MathScreen')}>
                   <Text style={styles.buttonText}>Unidad 1</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.buttons,styles.blue]} onPress={() => navigation.navigate('MathScreen')}>
+               <TouchableOpacity style={[styles.buttons,styles.blue]} onPress={() => navigation.navigate('Cap2MathScreen')}>
                   <Text style={styles.buttonText} >Unidad 2</Text>
                   
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.buttons,styles.blue]} onPress={() => navigation.navigate('CienceScreen')}>
+              <TouchableOpacity style={[styles.buttons,styles.blue]} onPress={() => navigation.navigate('Cap3MathScreen')}>
                   <Text style={styles.buttonText} >Unidad 3</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.buttons,styles.blue]} onPress={() => navigation.navigate('HistoryScreen')}>
+              <TouchableOpacity style={[styles.buttons,styles.blue]} onPress={() => navigation.navigate('Cap4MathScreen')}>
                   <Text style={styles.buttonText} >Unidad 4</Text>
               </TouchableOpacity>
-              
+            
           
       </View>
     </>

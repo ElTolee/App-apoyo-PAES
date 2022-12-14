@@ -8,17 +8,17 @@ export default function HistoryComponent({navigation}:any) {
       <View style={styles.container}>
           <Text style={styles.Textx}>Unidades</Text>
           
-              <TouchableOpacity style={[styles.buttons,styles.yellow]} onPress={() => navigation.navigate('LenguajeScreen')}>
+              <TouchableOpacity style={[styles.buttons,styles.yellow]} onPress={() => navigation.navigate('Cap1HistoryScreen')}>
                   <Text style={styles.buttonText}>Unidad 1</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.buttons,styles.yellow]} onPress={() => navigation.navigate('MathScreen')}>
+              <TouchableOpacity style={[styles.buttons,styles.yellow]} onPress={() => navigation.navigate('Cap2HistoryScreen')}>
                   <Text style={styles.buttonText} >Unidad 2</Text>
                   
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.buttons,styles.yellow]} onPress={() => navigation.navigate('CienceScreen')}>
+              <TouchableOpacity style={[styles.buttons,styles.yellow]} onPress={() => navigation.navigate('Cap3HistoryScreen')}>
                   <Text style={styles.buttonText} >Unidad 3</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.buttons,styles.yellow]} onPress={() => navigation.navigate('HistoryScreen')}>
+              <TouchableOpacity style={[styles.buttons,styles.yellow]} onPress={() => navigation.navigate('Cap4HistoryScreen')}>
                   <Text style={styles.buttonText} >Unidad 4</Text>
               </TouchableOpacity>
               
