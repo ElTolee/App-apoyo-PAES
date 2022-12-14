@@ -1,16 +1,16 @@
 import React from 'react'
 import { Button, TextInput, View,Text, StyleSheet } from 'react-native'
-import Cap2HistoryComponent from '../components/Units/Unity.History/Cap2HistoryComponent';
+import Cap1MathComponent from '../../../components/Units/Unity.Math/Cap1MathComponent';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-export const Cap2HistoryScreen = ({navigation}:any) => {
+export const Cap1MathScreen = ({navigation}:any) => {
     const nav=navigation;
   return (
     <>
         <View style={styles.container}>
-            <Cap2HistoryComponent navigation={nav}/>
+            <Cap1MathComponent navigation={nav}/>
         </View>
     </>
   )

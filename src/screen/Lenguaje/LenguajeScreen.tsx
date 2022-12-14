@@ -1,16 +1,15 @@
 import React from 'react'
 import { Button, TextInput, View,Text, StyleSheet } from 'react-native'
-import CienceComponent from '../components/subjectComponent/CienceComponent';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LenguajeComponent from '../../components/subjectComponent/LenguajeComponent';
 
 
-export const CienceScreen = ({navigation}:any) => {
-  const nav=navigation;
+
+export const LenguajeScreen = ({navigation}:any) => {
+  const nav= navigation;
   return (
     <>
         <View style={styles.container}>
-            <CienceComponent navigation={nav} />
+           <LenguajeComponent navigation={nav}/>
         </View>
     </>
   )

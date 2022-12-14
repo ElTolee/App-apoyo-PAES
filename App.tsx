@@ -1,37 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { AuthScreen } from './src/screen/AuthScreen';
+import { AuthScreen } from './src/screen/Login/AuthScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SignInScreen } from './src/screen/SignInScreen';
+import { SignInScreen } from './src/screen/Login/SignInScreen';
 import { HomeComponent } from './src/components/homeComponent/HomeComponent';
 import { HomeScreen } from './src/screen/HomeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import {CienceScreen} from './src/screen/CienceScreen';
-import {HistoryScreen} from './src/screen/HistoryScreen';
-import { LenguajeScreen } from './src/screen/LenguajeScreen';
-import { MathScreen } from './src/screen/MathScreen';
+import {CienceScreen} from './src/screen/Ciencias/CienceScreen';
+import {HistoryScreen} from './src/screen/Historia/HistoryScreen';
+import { LenguajeScreen } from './src/screen/Lenguaje/LenguajeScreen';
+import { MathScreen } from './src/screen/Matematica/MathScreen';
 
-import { Cap1MathScreen } from './src/screen/Cap1MathScreen';
-import { Cap2MathScreen } from './src/screen/Cap2MathScreen';
-import { Cap3MathScreen } from './src/screen/Cap3MathScreen';
-import { Cap4MathScreen } from './src/screen/Cap4MathScreen';
+import { Cap1MathScreen } from './src/screen/Matematica/Unidades/Cap1MathScreen';
+import { Cap2MathScreen } from './src/screen/Matematica/Unidades/Cap2MathScreen';
+import { Cap3MathScreen } from './src/screen/Matematica/Unidades/Cap3MathScreen';
+import { Cap4MathScreen } from './src/screen/Matematica/Unidades/Cap4MathScreen';
 
-import { Cap1LenguajeScreen } from './src/screen/Cap1LenguajeScreen';
-import { Cap2LenguajeScreen } from './src/screen/Cap2LenguajeScreen';
-import { Cap3LenguajeScreen } from './src/screen/Cap3LenguajeScreen';
-import { Cap4LenguajeScreen } from './src/screen/Cap4LenguajeScreen';
+import { Cap1LenguajeScreen } from './src/screen/Lenguaje/Unidades/Cap1LenguajeScreen';
+import { Cap2LenguajeScreen } from './src/screen/Lenguaje/Unidades/Cap2LenguajeScreen';
+import { Cap3LenguajeScreen } from './src/screen/Lenguaje/Unidades/Cap3LenguajeScreen';
+import { Cap4LenguajeScreen } from './src/screen/Lenguaje/Unidades/Cap4LenguajeScreen';
 
-import { Cap1CienceScreen } from './src/screen/Cap1CienceScreen';
-import { Cap2CienceScreen } from './src/screen/Cap2CienceScreen';
-import { Cap3CienceScreen } from './src/screen/Cap3CienceScreen';
-import { Cap4CienceScreen } from './src/screen/Cap4CienceScreen';
+import { Cap1CienceScreen } from './src/screen/Ciencias/Unidades/Cap1CienceScreen';
+import { Cap2CienceScreen } from './src/screen/Ciencias/Unidades/Cap2CienceScreen';
+import { Cap3CienceScreen } from './src/screen/Ciencias/Unidades/Cap3CienceScreen';
+import { Cap4CienceScreen } from './src/screen/Ciencias/Unidades/Cap4CienceScreen';
 
-import { Cap1HistoryScreen } from './src/screen/Cap1HistoryScreen';
-import { Cap2HistoryScreen } from './src/screen/Cap2HistoryScreen';
-import { Cap3HistoryScreen } from './src/screen/Cap3HistoryScreen';
-import { Cap4HistoryScreen } from './src/screen/Cap4HistoryScreen';
+import { Cap1HistoryScreen } from './src/screen/Historia/Unidades/Cap1HistoryScreen';
+import { Cap2HistoryScreen } from './src/screen/Historia/Unidades/Cap2HistoryScreen';
+import { Cap3HistoryScreen } from './src/screen/Historia/Unidades/Cap3HistoryScreen';
+import { Cap4HistoryScreen } from './src/screen/Historia/Unidades/Cap4HistoryScreen';
 
 const Stack = createNativeStackNavigator();
 

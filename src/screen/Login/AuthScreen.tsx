@@ -1,14 +1,18 @@
 import React from 'react'
 import { StatusBar, View, StyleSheet } from 'react-native';
+import { LoginComponent } from '../../components/authComponent/LoginComponent';
+import { NavigationContainer } from '@react-navigation/native';
 
-import { SignInComponents } from '../components/authComponent/SignInComponent';
+import { SignInComponents } from '../../components/authComponent/SignInComponent';
 
-export const SignInScreen = () => {
+export const AuthScreen = ({navigation}:any) => {
+    const nav2=navigation;
+
     return (
         <View style={styles.container}>
             <StatusBar />
             {/* <SignInComponents /> */}
-            <SignInComponents/>
+            <LoginComponent nav={nav2}/>
             
         </View>
     )
