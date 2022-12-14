@@ -1,16 +1,16 @@
 import React from 'react'
 import { Button, TextInput, View,Text, StyleSheet } from 'react-native'
-import Cap1MathComponent from '../components/Units/Unity.Math/Cap1MathComponent';
+import Cap4CienceComponent from '../../../components/Units/Unity.Cience/Cap4CienceComponent';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-export const Cap1MathScreen = ({navigation}:any) => {
+export const Cap4CienceScreen = ({navigation}:any) => {
     const nav=navigation;
   return (
     <>
         <View style={styles.container}>
-            <Cap1MathComponent navigation={nav}/>
+            <Cap4CienceComponent navigation={nav}/>
         </View>
     </>
   )

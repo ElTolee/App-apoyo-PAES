@@ -1,15 +1,15 @@
 import React from 'react'
 import { Button, TextInput, View,Text, StyleSheet } from 'react-native'
-import LenguajeComponent from '../components/subjectComponent/LenguajeComponent';
+import MathComponent from '../../components/subjectComponent/MathComponent';
 
 
 
-export const LenguajeScreen = ({navigation}:any) => {
-  const nav= navigation;
+export const MathScreen = ({navigation}:any) => {
+  const nav=navigation;
   return (
     <>
         <View style={styles.container}>
-           <LenguajeComponent navigation={nav}/>
+           <MathComponent navigation={nav}/>
         </View>
     </>
   )
