@@ -4,11 +4,12 @@ import MathComponent from '../components/subjectComponent/MathComponent';
 
 
 
-export const MathScreen = () => {
+export const MathScreen = ({navigation}:any) => {
+  const nav=navigation;
   return (
     <>
         <View style={styles.container}>
-           <MathComponent/>
+           <MathComponent navigation={nav}/>
         </View>
     </>
   )

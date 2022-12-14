@@ -13,6 +13,26 @@ import {HistoryScreen} from './src/screen/HistoryScreen';
 import { LenguajeScreen } from './src/screen/LenguajeScreen';
 import { MathScreen } from './src/screen/MathScreen';
 
+import { Cap1MathScreen } from './src/screen/Cap1MathScreen';
+import { Cap2MathScreen } from './src/screen/Cap2MathScreen';
+import { Cap3MathScreen } from './src/screen/Cap3MathScreen';
+import { Cap4MathScreen } from './src/screen/Cap4MathScreen';
+
+import { Cap1LenguajeScreen } from './src/screen/Cap1LenguajeScreen';
+import { Cap2LenguajeScreen } from './src/screen/Cap2LenguajeScreen';
+import { Cap3LenguajeScreen } from './src/screen/Cap3LenguajeScreen';
+import { Cap4LenguajeScreen } from './src/screen/Cap4LenguajeScreen';
+
+import { Cap1CienceScreen } from './src/screen/Cap1CienceScreen';
+import { Cap2CienceScreen } from './src/screen/Cap2CienceScreen';
+import { Cap3CienceScreen } from './src/screen/Cap3CienceScreen';
+import { Cap4CienceScreen } from './src/screen/Cap4CienceScreen';
+
+import { Cap1HistoryScreen } from './src/screen/Cap1HistoryScreen';
+import { Cap2HistoryScreen } from './src/screen/Cap2HistoryScreen';
+import { Cap3HistoryScreen } from './src/screen/Cap3HistoryScreen';
+import { Cap4HistoryScreen } from './src/screen/Cap4HistoryScreen';
+
 const Stack = createNativeStackNavigator();
 
 
@@ -27,8 +47,28 @@ export default function App() {
         <Stack.Screen name="CienceScreen" component={CienceScreen} />
         <Stack.Screen name="LenguajeScreen" component={LenguajeScreen} />
         <Stack.Screen name="HistoryScreen" component={HistoryScreen} />
-
         <Stack.Screen name="MathScreen" component={MathScreen} />
+
+        <Stack.Screen name="Cap1MathScreen" component={Cap1MathScreen} />
+        <Stack.Screen name="Cap2MathScreen" component={Cap2MathScreen} />
+        <Stack.Screen name="Cap3MathScreen" component={Cap3MathScreen} />
+        <Stack.Screen name="Cap4MathScreen" component={Cap4MathScreen} />
+
+        <Stack.Screen name="Cap1LenguajeScreen" component={Cap1LenguajeScreen} />
+        <Stack.Screen name="Cap2LenguajeScreen" component={Cap2LenguajeScreen} />
+        <Stack.Screen name="Cap3LenguajeScreen" component={Cap3LenguajeScreen} />
+        <Stack.Screen name="Cap4LenguajeScreen" component={Cap4LenguajeScreen} />
+        
+        <Stack.Screen name="Cap1CienceScreen" component={Cap1CienceScreen} />
+        <Stack.Screen name="Cap2CienceScreen" component={Cap2CienceScreen} />
+        <Stack.Screen name="Cap3CienceScreen" component={Cap3CienceScreen} />
+        <Stack.Screen name="Cap4CienceScreen" component={Cap4CienceScreen} />
+
+        <Stack.Screen name="Cap1HistoryScreen" component={Cap1HistoryScreen} />
+        <Stack.Screen name="Cap2HistoryScreen" component={Cap2HistoryScreen} />
+        <Stack.Screen name="Cap3HistoryScreen" component={Cap3HistoryScreen} />
+        <Stack.Screen name="Cap4HistoryScreen" component={Cap4HistoryScreen} />
+                                                                                                           
 
       </Stack.Navigator>
     </NavigationContainer>
