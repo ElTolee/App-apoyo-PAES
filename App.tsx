@@ -33,6 +33,7 @@ import { Cap2HistoryScreen } from './src/screen/Historia/Unidades/Cap2HistoryScr
 import { Cap3HistoryScreen } from './src/screen/Historia/Unidades/Cap3HistoryScreen';
 import { Cap4HistoryScreen } from './src/screen/Historia/Unidades/Cap4HistoryScreen';
 
+
 const Stack = createNativeStackNavigator();
 
 

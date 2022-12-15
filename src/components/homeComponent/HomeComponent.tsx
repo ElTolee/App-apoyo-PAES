@@ -1,7 +1,10 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { FirebaseDatabaseNode, FirebaseDatabaseProvider } from '@react-firebase/database';
+import { firebase } from '../../firebase/firebaseConfig';
+
 
 export const HomeComponent = ({navigation}:any) => {
     function handlePress() {
@@ -12,8 +15,25 @@ export const HomeComponent = ({navigation}:any) => {
     return (
         <>
             <View style={styles.container}>
+                <FirebaseDatabaseProvider firebase={firebase}>
+
+                    <FirebaseDatabaseNode
+                    path="users/"
+                    limitToFirst={10}
+                    // orderByKey
+                    orderByValue={"created_on"}
+                    >
+                    {d => {
+                        return (
+                        <React.Fragment>
+                            <Text>Path {d.path}</Text>
+                            <Text>Load more</Text>
+                        </React.Fragment>
+                        );
+                    }}
+                    </FirebaseDatabaseNode>
+                </FirebaseDatabaseProvider>
                 <Text style={styles.Textx}>Materias</Text>
-                
                     <TouchableOpacity style={[styles.buttons,styles.red]} onPress={() => navigation.navigate('LenguajeScreen')}>
                         <Text style={styles.buttonText}>Lenguaje</Text>
                     </TouchableOpacity>
