@@ -50,9 +50,9 @@ function PrincipalStackScreen({navigation}:any) {
         />
       ),
     }}>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="Auth" component={AuthScreen} />
-        <Stack.Screen name="SignInScreen" component={SignInScreen} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen}/>
+        <Stack.Screen name="Auth" component={AuthScreen}  options={{headerShown:false}}/>
+        <Stack.Screen name="SignInScreen" component={SignInScreen}  options={{headerShown:false}}/>
         <Stack.Screen name="CienceScreen" component={CienceScreen} />
         <Stack.Screen name="LenguajeScreen" component={LenguajeScreen} />
         <Stack.Screen name="HistoryScreen" component={HistoryScreen} />
