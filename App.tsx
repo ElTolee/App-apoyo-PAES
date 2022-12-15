@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Button } from 'react-native';
 import { AuthScreen } from './src/screen/Login/AuthScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -7,6 +7,7 @@ import { SignInScreen } from './src/screen/Login/SignInScreen';
 import { HomeComponent } from './src/components/homeComponent/HomeComponent';
 import { HomeScreen } from './src/screen/HomeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import {CienceScreen} from './src/screen/Ciencias/CienceScreen';
 import {HistoryScreen} from './src/screen/Historia/HistoryScreen';
@@ -33,14 +34,22 @@ import { Cap2HistoryScreen } from './src/screen/Historia/Unidades/Cap2HistoryScr
 import { Cap3HistoryScreen } from './src/screen/Historia/Unidades/Cap3HistoryScreen';
 import { Cap4HistoryScreen } from './src/screen/Historia/Unidades/Cap4HistoryScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator( );
+const Tab = createBottomTabNavigator();
 
 
-
-export default function App() {
+function PrincipalStackScreen({navigation}:any) {
   return (
-    <NavigationContainer >
-      <Stack.Navigator initialRouteName="Auth" >
+    <Stack.Navigator initialRouteName="Auth"  screenOptions={{
+      title: '',
+      headerRight: () => (
+        <Button
+        onPress={() => navigation.navigate('Auth')}
+          title="Cerrar Sesion"
+          color="black"
+        />
+      ),
+    }}>
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="Auth" component={AuthScreen} />
         <Stack.Screen name="SignInScreen" component={SignInScreen} />
@@ -71,9 +80,28 @@ export default function App() {
                                                                                                            
 
       </Stack.Navigator>
+  );
+}
+
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator initialRouteName='Home' screenOptions={{ headerShown: false, tabBarActiveTintColor:'blue', }}>
+        <Tab.Screen name="Home" component={PrincipalStackScreen} options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size}) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
+          
+        }} />
+        
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {

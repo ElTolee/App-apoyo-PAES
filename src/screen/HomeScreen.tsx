@@ -10,7 +10,7 @@ export const HomeScreen = ( {navigation}:any)  => {
 
     <>
         <View style={styles.container}>
-            <HomeComponent navigation={nav}/>
+            <HomeComponent navigation={nav} />
         </View>
     </>
   )

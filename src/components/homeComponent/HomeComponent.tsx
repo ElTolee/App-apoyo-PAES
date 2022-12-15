@@ -4,14 +4,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export const HomeComponent = ({navigation}:any) => {
-    function handlePress() {
-        console.log("Text button pressed");
     
-    }
   
     return (
         <>
-            <View style={styles.container}>
+            <View style={styles.container} >
+                
                 <Text style={styles.Textx}>Materias</Text>
                 
                     <TouchableOpacity style={[styles.buttons,styles.red]} onPress={() => navigation.navigate('LenguajeScreen')}>
@@ -44,6 +42,8 @@ export const HomeComponent = ({navigation}:any) => {
         buttonText: {
             fontSize: 25,
             color: 'white',
+            alignItems: 'center',
+            justifyContent: 'center'
         },
         buttons:{
             width: '80%',
