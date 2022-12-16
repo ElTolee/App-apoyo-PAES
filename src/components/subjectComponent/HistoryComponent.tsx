@@ -7,7 +7,7 @@ export default function HistoryComponent({navigation}:any) {
       
       <View style={styles.container}>
           <Text style={styles.Textx}>Unidades</Text>
-          
+          <Text style={styles.Textxx}>En esta sección, se reforzara la historia de diferente partes del mundo y área local</Text>
               <TouchableOpacity style={[styles.buttons,styles.yellow]} onPress={() => navigation.navigate('Cap1HistoryScreen')}>
                   <Text style={styles.buttonText}>Unidad 1</Text>
               </TouchableOpacity>
@@ -72,11 +72,20 @@ const styles = StyleSheet.create({
   }
   ,
   Textx:{
-      fontSize: 60,
-      fontWeight: 'bold',
-      color: 'black',
-      marginVertical: 10,
-      marginBottom: 100,
-      
-  }
+    fontSize: 60,
+    fontWeight: 'bold',
+    color: 'black',
+    marginVertical: "10%",
+    marginBottom: "10%",
+    marginTop: "20%",
+    
+},
+Textxx:{
+  fontSize: 20,
+  fontWeight: 'normal',
+  color: 'black',
+  marginVertical: "5%",
+  marginBottom: "5%",
+  paddingHorizontal:"10%",
+}
 });

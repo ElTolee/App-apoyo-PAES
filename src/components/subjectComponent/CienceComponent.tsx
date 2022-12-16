@@ -7,7 +7,7 @@ export default function CienceComponent({navigation}:any) {
       
       <View style={styles.container}>
           <Text style={styles.Textx}>Unidades</Text>
-          
+          <Text style={styles.Textxx}>En esta sección, se reforzara las habilidades en el área de las ciencias "Biología, Física y quimica"</Text>
               <TouchableOpacity style={[styles.buttons,styles.green]} onPress={() => navigation.navigate('Cap1CienceScreen')}>
                   <Text style={styles.buttonText}>Unidad 1</Text>
               </TouchableOpacity>
@@ -75,10 +75,19 @@ const styles = StyleSheet.create({
       fontSize: 60,
       fontWeight: 'bold',
       color: 'black',
-      marginVertical: 10,
-      marginBottom: 100,
+      marginVertical: "10%",
+      marginBottom: "10%",
+      marginTop: "20%",
       
-  }
+  },
+  Textxx:{
+    fontSize: 20,
+    fontWeight: 'normal',
+    color: 'black',
+    marginVertical: "5%",
+    marginBottom: "5%",
+    paddingHorizontal:"10%",
+}
 });
 
 
