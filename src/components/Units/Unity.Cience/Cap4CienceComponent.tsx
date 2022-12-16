@@ -20,7 +20,7 @@ export default function Cap4CienceComponent({ navigation }: any) {
             <View style={styles.container}>
                 <Text>Capitulo 4 Science</Text>
                 <UnityContentList list={unities} />
-                <Button title='Asignar' onPress={(e) => assignUnity(e)} />
+                <Button title='Completado' color={'green'} onPress={(e) => assignUnity(e)} />
             </View>
         </>
     )

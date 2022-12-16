@@ -34,7 +34,7 @@ export default function Cap1LenguajeComponent({ navigation, route: {params} }: a
             <View style={styles.container}>
                 <Text>Cap {unityId} Language</Text>
                 <UnityContentList list={unities1[unityId]} />
-                <Button title='Asignar' onPress={(e) => assignUnity(e)} />
+                <Button title='Completado' color={'green'} onPress={(e) => assignUnity(e)} />
             </View>
         </>
     )

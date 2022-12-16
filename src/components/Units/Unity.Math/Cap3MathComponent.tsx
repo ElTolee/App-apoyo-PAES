@@ -22,7 +22,7 @@ export default function Cap3MathComponent({navigation}:any) {
             <View style={styles.container}>
                 <Text>Capitulo 3 Math</Text>
                 <UnityContentList list={unities} />
-                <Button title='Asignar' onPress={(e) => assignUnity(e)} />
+                <Button title='Completado' color={'green'} onPress={(e) => assignUnity(e)} />
             </View>
         </>
     )
