@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Button } from 'react-native';
 import { AuthScreen } from './src/screen/Login/AuthScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -7,6 +7,11 @@ import { SignInScreen } from './src/screen/Login/SignInScreen';
 import { HomeComponent } from './src/components/homeComponent/HomeComponent';
 import { HomeScreen } from './src/screen/HomeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Mapview from 'react-native-maps';
+import * as Location from 'expo-location'
+import React, { useEffect, useState } from 'react';
+
 
 import {CienceScreen} from './src/screen/Ciencias/CienceScreen';
 import {HistoryScreen} from './src/screen/Historia/HistoryScreen';
@@ -35,16 +40,26 @@ import { Cap4HistoryScreen } from './src/screen/Historia/Unidades/Cap4HistoryScr
 
 
 const Stack = createNativeStackNavigator();
+import {MapScreen} from './src/screen/MapScreen'; 
+const Tab = createBottomTabNavigator();
 
+  
 
-
-export default function App() {
+function PrincipalStackScreen({navigation}:any) {
   return (
-    <NavigationContainer >
-      <Stack.Navigator initialRouteName="Auth" >
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="Auth" component={AuthScreen} />
-        <Stack.Screen name="SignInScreen" component={SignInScreen} />
+    <Stack.Navigator initialRouteName="Auth"  screenOptions={{
+      title: '',
+      headerRight: () => (
+        <Button
+        onPress={() => navigation.navigate('Auth')}
+          title="Cerrar Sesion"
+          color="black"
+        />
+      ),
+    }}>
+        <Stack.Screen name="HomeScreen" component={HomeScreen}/>
+        <Stack.Screen name="Auth" component={AuthScreen}  options={{headerShown:false}}/>
+        <Stack.Screen name="SignInScreen" component={SignInScreen}  options={{headerShown:false}}/>
         <Stack.Screen name="CienceScreen" component={CienceScreen} />
         <Stack.Screen name="LenguajeScreen" component={LenguajeScreen} />
         <Stack.Screen name="HistoryScreen" component={HistoryScreen} />
@@ -72,9 +87,34 @@ export default function App() {
                                                                                                            
 
       </Stack.Navigator>
+  );
+}
+
+
+export default function App() {
+  
+  return (
+    <NavigationContainer>
+      <Tab.Navigator initialRouteName='Home' screenOptions={{ headerShown: false, tabBarActiveTintColor:'black', }}>
+        <Tab.Screen name="Home" component={PrincipalStackScreen} options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size}) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
+        }} />
+        <Tab.Screen name="Maps" component={MapScreen} options={{
+          tabBarLabel: 'Maps',
+          tabBarIcon: ({ color, size}) => (
+            <MaterialCommunityIcons name="map" color={color} size={size} />
+          ),
+        }} />
+        
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -84,5 +124,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-

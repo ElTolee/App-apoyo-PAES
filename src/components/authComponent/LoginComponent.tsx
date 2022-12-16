@@ -58,7 +58,7 @@ export const LoginComponent = ({nav}:any) => {
             disabled={loading || correctData}
         />
     </View>
-    <View style={{ marginTop: 50, width: '50%' }}>
+    <View style={{ marginTop: 30, width: '50%' }}>
         <Button
             onPress={() => nav.push('SignInScreen')}
             title={loading ? 'Loading...' : 'Registrarse'}

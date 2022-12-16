@@ -3,10 +3,10 @@ import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } fro
 
 
 export const HomeComponent = ({navigation}:any) => {
-  
     return (
         <>
-            <View style={styles.container}>
+            <View style={styles.container} >
+                
                 <Text style={styles.Textx}>Materias</Text>
                     <TouchableOpacity style={[styles.buttons,styles.red]} onPress={() => navigation.navigate('LenguajeScreen')}>
                         <Text style={styles.buttonText}>Lenguaje</Text>
@@ -38,6 +38,8 @@ export const HomeComponent = ({navigation}:any) => {
         buttonText: {
             fontSize: 25,
             color: 'white',
+            alignItems: 'center',
+            justifyContent: 'center'
         },
         buttons:{
             width: '80%',
