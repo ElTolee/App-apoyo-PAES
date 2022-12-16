@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import { StyleSheet, View,  Text,  Platform } from 'react-native';
-//import { MapScreen } from '../../screen/MapScreen';
 import * as Location from 'expo-location';
 
 export default () => {
@@ -33,7 +32,7 @@ export default () => {
 return(      
     <View style={styles.container}>
         <MapView
-            style={styles.map} //provider={'google'} showsUserLocation showsMyLocationButton
+            style={styles.map} 
             initialRegion={{
             latitude: origin.latitude,
             longitude: origin.longitude,
@@ -42,38 +41,45 @@ return(
            }}
            
         >
-                <Marker
-                coordinate={{ latitude: -33.44188972398187, longitude: -70.64578824417677 }} // nacional de chile
+                <Marker 
+                coordinate={{ latitude: -33.44188972398187, longitude: -70.64578824417677 }}
+                title='Biblioteca Nacional de Chile'
                 />
                 <Marker  
-                coordinate={{ latitude: -33.50619761071946,   longitude: -70.75658203721999 }} //maipu
+                coordinate={{ latitude: -33.50619761071946,   longitude: -70.75658203721999 }} 
+                title="Biblioteca Municipal de Maipu"
                 />
                 <Marker  
-                coordinate={{ latitude: -33.50291614742179,   longitude: -70.71329314032589 }} //cerrillos 
+                coordinate={{ latitude: -33.50291614742179,   longitude: -70.71329314032589 }} 
+                title="Biblioteca Municipal de Cerrillos"
                 />
                 <Marker  
-                coordinate={{ latitude: -33.45571100492027,   longitude: -70.76137040866845 }}// bibliotren
+                coordinate={{ latitude: -33.42535670566538,   longitude: -70.70435238401834 }}
+                title="Biblioteca Municipal de Quinta Normal"
                 />
                 <Marker  
-                coordinate={{ latitude: -33.42535670566538,   longitude: -70.70435238401834 }}//quinta
+                coordinate={{ latitude: -33.44017382137755,   longitude: -70.76266955349881 }}
+                title="Biblioteca Municipal Gala Torres"
                 />
                 <Marker  
-                coordinate={{ latitude: -33.44017382137755,   longitude: -70.76266955349881 }}//gala torres
+                coordinate={{ latitude: -33.44246241812792,   longitude: -70.6802460260551 }}
+                title="Biblioteca Municipal de Santiago"
                 />
                 <Marker  
-                coordinate={{ latitude: -33.44246241812792,   longitude: -70.6802460260551 }}//santiago
+                coordinate={{ latitude: -33.415236245873515,   longitude: -70.65556227361164 }}
+                title="Biblioteca Municipal Pablo Neruda"
                 />
                 <Marker  
-                coordinate={{ latitude: -33.415236245873515,   longitude: -70.65556227361164 }}// pablo neruda
+                coordinate={{ latitude: -33.39450972016292,  longitude: -70.67071896370851 }}
+                title="Biblioteca Municipal de Conchali"
                 />
                 <Marker  
-                coordinate={{ latitude: -33.39450972016292,  longitude: -70.67071896370851 }}//conchali
+                coordinate={{ latitude: -33.48269807570694,   longitude: -70.65106202870004 }}
+                title="Biblioteca Municipal de Maipu"
                 />
                 <Marker  
-                coordinate={{ latitude: -33.48269807570694,   longitude: -70.65106202870004 }}// san miguel
-                />
-                <Marker  
-                coordinate={{ latitude: -33.460215014180946,  longitude: -70.63408111838679 }}//barrio matta
+                coordinate={{ latitude: -33.460215014180946,  longitude: -70.63408111838679 }}
+                title="Biblioteca Municipal Barrio Matta"
                 />
 
         </MapView>

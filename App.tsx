@@ -38,20 +38,13 @@ import { Cap2HistoryScreen } from './src/screen/Historia/Unidades/Cap2HistoryScr
 import { Cap3HistoryScreen } from './src/screen/Historia/Unidades/Cap3HistoryScreen';
 import { Cap4HistoryScreen } from './src/screen/Historia/Unidades/Cap4HistoryScreen';
 
+import {MapScreen} from './src/screen/MapScreen'; 
+
 const Stack = createNativeStackNavigator( );
 const Tab = createBottomTabNavigator();
 
   
-function MapScreen() {
 
-  return (
-    <View style={styles.container}>
-      
-      <Mapview style={{width:'100%',height:'100%'}}/>
-          
-    </View>
-  );
-}
 function PrincipalStackScreen({navigation}:any) {
   return (
     <Stack.Navigator initialRouteName="Auth"  screenOptions={{
