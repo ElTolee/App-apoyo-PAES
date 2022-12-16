@@ -8,6 +8,10 @@ import { HomeComponent } from './src/components/homeComponent/HomeComponent';
 import { HomeScreen } from './src/screen/HomeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Mapview from 'react-native-maps';
+import * as Location from 'expo-location'
+import React, { useEffect, useState } from 'react';
+
 
 import {CienceScreen} from './src/screen/Ciencias/CienceScreen';
 import {HistoryScreen} from './src/screen/Historia/HistoryScreen';
@@ -37,7 +41,17 @@ import { Cap4HistoryScreen } from './src/screen/Historia/Unidades/Cap4HistoryScr
 const Stack = createNativeStackNavigator( );
 const Tab = createBottomTabNavigator();
 
+  
+function MapScreen() {
 
+  return (
+    <View style={styles.container}>
+      
+      <Mapview style={{width:'100%',height:'100%'}}/>
+          
+    </View>
+  );
+}
 function PrincipalStackScreen({navigation}:any) {
   return (
     <Stack.Navigator initialRouteName="Auth"  screenOptions={{
@@ -85,15 +99,21 @@ function PrincipalStackScreen({navigation}:any) {
 
 
 export default function App() {
+  
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName='Home' screenOptions={{ headerShown: false, tabBarActiveTintColor:'blue', }}>
+      <Tab.Navigator initialRouteName='Home' screenOptions={{ headerShown: false, tabBarActiveTintColor:'black', }}>
         <Tab.Screen name="Home" component={PrincipalStackScreen} options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size}) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
-          
+        }} />
+        <Tab.Screen name="Maps" component={MapScreen} options={{
+          tabBarLabel: 'Maps',
+          tabBarIcon: ({ color, size}) => (
+            <MaterialCommunityIcons name="map" color={color} size={size} />
+          ),
         }} />
         
       </Tab.Navigator>
