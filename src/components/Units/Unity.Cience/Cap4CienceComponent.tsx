@@ -2,8 +2,12 @@ import React from 'react'
 import { Button, GestureResponderEvent, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { auth } from '../../../firebase/firebaseConfig';
 import { assignUnityToUser } from '../../../firebase/usersStorage';
+import UnityContentList from '../../common/UnityContentList';
 
 export default function Cap4CienceComponent({ navigation }: any) {
+    const unities = [
+        { title: "Ensayo de ciencias técnico profesional", data: ["https://drive.google.com/file/d/1gRnQFgD8sj0ujOOdW_6cTUegmlJ8rIF_/view?usp=share_link"] }
+    ]
     const assignUnity = (event: GestureResponderEvent): void => {
         const user = auth.currentUser;
         if (user) {
@@ -15,6 +19,7 @@ export default function Cap4CienceComponent({ navigation }: any) {
 
             <View style={styles.container}>
                 <Text>Capitulo 4 Science</Text>
+                <UnityContentList list={unities} />
                 <Button title='Asignar' onPress={(e) => assignUnity(e)} />
             </View>
         </>

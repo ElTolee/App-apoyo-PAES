@@ -1,23 +1,14 @@
 import { ref, set, onValue, child, get, DataSnapshot, push, update } from "firebase/database";
+import Unity from "../components/interfaces/unity.interface";
+import User from "../components/interfaces/user.interface";
 import { db } from "./firebaseConfig";
-export const saveUser = (user: any): Promise<void> => {
-    return set(ref(db, "users"), user);
-}
 
-interface User {
-    email: string;
-    unities: object;
-}
 
-interface Course {
-    name: string;
-    unities: Unity[]
-}
 
-interface Unity {
-    id: number;
-    course: string;
-    name: string;
+export const saveUser = async (user: User): Promise<void> => {
+    const updates: any = {};
+    updates[`/users/${user.uid}`] = user;
+    return update(ref(db), updates);
 }
 
 export const assignUnityToUser = async (uid: string, unity: Unity): Promise<void> => {
@@ -34,4 +25,8 @@ export const assignUnityToUser = async (uid: string, unity: Unity): Promise<void
 
 export const getUser = async (uid: string): Promise<DataSnapshot> => {
     return get(ref(db, `users/${uid}`))
+}
+
+export const getUserUnities = async (uid: string): Promise<DataSnapshot> => {
+    return get(ref(db, `users/${uid}/unities`))
 }

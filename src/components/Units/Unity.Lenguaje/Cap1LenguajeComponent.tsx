@@ -2,11 +2,26 @@ import React from 'react'
 import { Button, GestureResponderEvent, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { auth } from '../../../firebase/firebaseConfig';
 import { assignUnityToUser } from '../../../firebase/usersStorage';
+import UnityContentList from '../../common/UnityContentList';
 
 export default function Cap1LenguajeComponent({ navigation, route: {params} }: any) {
     const unityId = params.unityId;
     navigation.setOptions({ title: `Cap ${unityId} Language` })
-
+    const unities1 = [[
+        { title: "Ensayo comprensión lectora", data: ["https://drive.google.com/file/d/1ma2G9xkRH-vVlohlkM7Srqchbfbf9O-y/view?usp=share_link"] },
+        { title: "Comprensión lectora claves", data: ["https://drive.google.com/file/d/1_gKzN6yDp4sI6CHCrSGQPNVbgXM4hqHJ/view?usp=share_link"] },
+        { title: "Apuntes Comprensión lectora", data: ["https://drive.google.com/file/d/1_gKzN6yDp4sI6CHCrSGQPNVbgXM4hqHJ/view?usp=share_link"] },
+        { title: "Ensayo comprensión lectora general", data: ["https://drive.google.com/file/d/1ROB-FhroVai0ZK2f80fDoQUf3DAivFdB/view?usp=share_link"] }
+    ],
+    [
+        { title: "Ensayo lenguaje", data: ["https://drive.google.com/file/d/1BZaq4rmShr7qEs4cB5MX4EX4JcEdaSqA/view?usp=share_link"] }
+    ],
+    [
+        { title: "Apuntes generales lenguaje", data: ["https://drive.google.com/file/d/1s_hFSLBiNwyTuNfnDeEHB0pOHpOjZmFi/view?usp=share_link"] }
+    ],
+    [
+        { title: "Cuadernillo de vocabulario", data: ["https://drive.google.com/file/d/1QIaPNjMn8g-6PZ1ZbRvT-GRvk95Cfljl/view?usp=share_link"] }
+    ]]
     const assignUnity = (event: GestureResponderEvent): void => {
         const user = auth.currentUser;
         if (user) {
@@ -18,6 +33,7 @@ export default function Cap1LenguajeComponent({ navigation, route: {params} }: a
 
             <View style={styles.container}>
                 <Text>Cap {unityId} Language</Text>
+                <UnityContentList list={unities1[unityId]} />
                 <Button title='Asignar' onPress={(e) => assignUnity(e)} />
             </View>
         </>
