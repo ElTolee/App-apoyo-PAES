@@ -5,12 +5,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-export const Cap1HistoryScreen = ({navigation}:any) => {
+export const Cap1HistoryScreen = ({navigation, route}:any) => {
     const nav=navigation;
   return (
     <>
         <View style={styles.container}>
-            <Cap1HistoryComponent navigation={nav}/>
+            <Cap1HistoryComponent navigation={nav} route={route} />
         </View>
     </>
   )

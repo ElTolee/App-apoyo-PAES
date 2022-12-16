@@ -1,16 +1,24 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Button, GestureResponderEvent, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { auth } from '../../../firebase/firebaseConfig';
+import { assignUnityToUser } from '../../../firebase/usersStorage';
 
+export default function Cap4CienceComponent({ navigation }: any) {
+    const assignUnity = (event: GestureResponderEvent): void => {
+        const user = auth.currentUser;
+        if (user) {
+            assignUnityToUser(user.uid, { id: 4, name: 'Cap4Science', course: 'Science' })
+        }
+    }
+    return (
+        <>
 
-export default function Cap4CienceComponent({navigation}:any) {
-  return (
-    <>
-      
-      <View style={styles.container}>
-      <Text>Cap 4 Cience</Text>
-      </View>
-    </>
-)
+            <View style={styles.container}>
+                <Text>Capitulo 4 Science</Text>
+                <Button title='Asignar' onPress={(e) => assignUnity(e)} />
+            </View>
+        </>
+    )
 }
 const styles = StyleSheet.create({
   container: {
