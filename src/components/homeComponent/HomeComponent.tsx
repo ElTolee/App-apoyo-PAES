@@ -1,17 +1,13 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
 
 export const HomeComponent = ({navigation}:any) => {
-    
-  
     return (
         <>
             <View style={styles.container} >
                 
                 <Text style={styles.Textx}>Materias</Text>
-                
                     <TouchableOpacity style={[styles.buttons,styles.red]} onPress={() => navigation.navigate('LenguajeScreen')}>
                         <Text style={styles.buttonText}>Lenguaje</Text>
                     </TouchableOpacity>

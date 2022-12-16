@@ -5,12 +5,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-export const Cap1LenguajeScreen = ({navigation}:any) => {
+export const Cap1LenguajeScreen = ({navigation, route}:any) => {
     const nav=navigation;
   return (
     <>
         <View style={styles.container}>
-            <Cap1LenguajeComponent navigation={nav}/>
+            <Cap1LenguajeComponent navigation={nav} route={route}/>
         </View>
     </>
   )

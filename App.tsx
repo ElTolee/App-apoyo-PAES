@@ -38,9 +38,9 @@ import { Cap2HistoryScreen } from './src/screen/Historia/Unidades/Cap2HistoryScr
 import { Cap3HistoryScreen } from './src/screen/Historia/Unidades/Cap3HistoryScreen';
 import { Cap4HistoryScreen } from './src/screen/Historia/Unidades/Cap4HistoryScreen';
 
-import {MapScreen} from './src/screen/MapScreen'; 
 
-const Stack = createNativeStackNavigator( );
+const Stack = createNativeStackNavigator();
+import {MapScreen} from './src/screen/MapScreen'; 
 const Tab = createBottomTabNavigator();
 
   
