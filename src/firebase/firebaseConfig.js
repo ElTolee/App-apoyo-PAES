@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app"; 
+import { getStorage } from 'firebase/storage';
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
 import { assignUnityToUser } from "./usersStorage";
@@ -18,6 +19,13 @@ const firebaseConfig = {
   databaseURL: "https://apoyo-paes-default-rtdb.firebaseio.com"
 };
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const storage = getStorage(app);
+export const db = getDatabase(app);
+
+export { auth, storage };
 // Firebase Estefi
 //const firebaseConfig = {
 //  apiKey: "AIzaSyDAIqjXXeE3PRJEMyXASFl32UES4buKs6E",
@@ -29,7 +37,3 @@ const firebaseConfig = {
 //  databaseURL: "https://apoyo-paes-9cb01-default-rtdb.firebaseio.com"
 //};
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getDatabase(app);

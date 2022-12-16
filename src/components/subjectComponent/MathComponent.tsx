@@ -8,7 +8,7 @@ export default function MathComponent({navigation}:any) {
       
       <View style={styles.container}>
           <Text style={styles.Textx}>Unidades</Text>
-          
+          <Text style={styles.Textxx}>En esta sección se reforzara las habilidades matemáticas, viendo las áreas aritmética, algebráica y probabilidad</Text>
               <TouchableOpacity style={[styles.buttons,styles.blue]} onPress={() => navigation.navigate('Cap1MathScreen')}>
                   <Text style={styles.buttonText}>Unidad 1</Text>
               </TouchableOpacity>
@@ -73,11 +73,20 @@ const styles = StyleSheet.create({
   }
   ,
   Textx:{
-      fontSize: 60,
-      fontWeight: 'bold',
-      color: 'black',
-      marginVertical: 10,
-      marginBottom: 100,
-      
-  }
+    fontSize: 60,
+    fontWeight: 'bold',
+    color: 'black',
+    marginVertical: "10%",
+    marginBottom: "10%",
+    marginTop: "20%",
+    
+},
+Textxx:{
+  fontSize: 20,
+  fontWeight: 'normal',
+  color: 'black',
+  marginVertical: "5%",
+  marginBottom: "5%",
+  paddingHorizontal:"10%",
+}
 });
