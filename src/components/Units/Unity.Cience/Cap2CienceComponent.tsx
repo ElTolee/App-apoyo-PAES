@@ -1,16 +1,30 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Button, GestureResponderEvent, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { auth } from '../../../firebase/firebaseConfig';
+import { assignUnityToUser } from '../../../firebase/usersStorage';
+import UnityContentList from '../../common/UnityContentList';
 
+export default function Cap2CienceComponent({ navigation }: any) {
+    const unities = [
+        { title: "Oscilaciones y ondas", data: ["https://drive.google.com/file/d/1h3uJjvJGEu8UPlMCD6Y7KMnOuO_U7oBt/view?usp=share_link"] },
+        { title: "Ejercicios onda", data: ["https://drive.google.com/file/d/1kd-62yL5ql8RpCGOrwcMMyvOlKnaDjU_/view?usp=share_link"] }
+    ]
+    const assignUnity = (event: GestureResponderEvent): void => {
+        const user = auth.currentUser;
+        if (user) {
+            assignUnityToUser(user.uid, { id: 2, name: 'Cap2Science', course: 'Science' })
+        }
+    }
+    return (
+        <>
 
-export default function Cap2CienceComponent({navigation}:any) {
-  return (
-    <>
-      
-      <View style={styles.container}>
-      <Text>Cap 2 Cience</Text>
-      </View>
-    </>
-)
+            <View style={styles.container}>
+                <Text>Capitulo 2 Science</Text>
+                <UnityContentList list={unities} />
+                <Button title='Completado' color={'green'} onPress={(e) => assignUnity(e)} />
+            </View>
+        </>
+    )
 }
 const styles = StyleSheet.create({
   container: {

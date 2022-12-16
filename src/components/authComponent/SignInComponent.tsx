@@ -18,7 +18,8 @@ export const SignInComponents = () => {
     const handlerSubmit = async () => {
         setLoading(true);
         const user = await signIn(email, password);
-        if (user) {
+        console.log(user);
+        if (user.uid) {
             // TODO: guardar datos del usuario en el storage(context, reducer, redux, etc...)
             setLoading(false);
         } else {
@@ -26,7 +27,7 @@ export const SignInComponents = () => {
             setLoading(false);
             setError({
                 code: '404',
-                message: 'no existe usuario',
+                message: user.message,
             })
         }
     }

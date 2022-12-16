@@ -2,16 +2,20 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
   } from "firebase/auth";
-  import { auth } from "./firebaseConfig";
+import User from "../components/interfaces/user.interface";
+import { auth } from "./firebaseConfig";
+import { saveUser } from "./usersStorage";
   
   const signIn = async (email: string, password: string) => {
     return createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        const user : User = userCredential.user;
+        saveUser({email: email, uid: user.uid});
         return userCredential.user;
       })
       .catch((error) => {
-        console.error(error);
-        return undefined;
+        console.error(error, "Caatch");
+        return error;
       });
   };
 

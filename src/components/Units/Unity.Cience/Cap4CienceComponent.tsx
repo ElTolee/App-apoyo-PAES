@@ -1,16 +1,29 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Button, GestureResponderEvent, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { auth } from '../../../firebase/firebaseConfig';
+import { assignUnityToUser } from '../../../firebase/usersStorage';
+import UnityContentList from '../../common/UnityContentList';
 
+export default function Cap4CienceComponent({ navigation }: any) {
+    const unities = [
+        { title: "Ensayo de ciencias técnico profesional", data: ["https://drive.google.com/file/d/1gRnQFgD8sj0ujOOdW_6cTUegmlJ8rIF_/view?usp=share_link"] }
+    ]
+    const assignUnity = (event: GestureResponderEvent): void => {
+        const user = auth.currentUser;
+        if (user) {
+            assignUnityToUser(user.uid, { id: 4, name: 'Cap4Science', course: 'Science' })
+        }
+    }
+    return (
+        <>
 
-export default function Cap4CienceComponent({navigation}:any) {
-  return (
-    <>
-      
-      <View style={styles.container}>
-      <Text>Cap 4 Cience</Text>
-      </View>
-    </>
-)
+            <View style={styles.container}>
+                <Text>Capitulo 4 Science</Text>
+                <UnityContentList list={unities} />
+                <Button title='Completado' color={'green'} onPress={(e) => assignUnity(e)} />
+            </View>
+        </>
+    )
 }
 const styles = StyleSheet.create({
   container: {
